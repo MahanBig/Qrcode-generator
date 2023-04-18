@@ -7,9 +7,20 @@ tk.title("QrGenerator")
 tk.config(bg="#99bbff")
 
 def generateQr():
-    pass
+    if len(userInput.get()) > 0:
+        global qr,img
+        qr=pyqrcode.create(userInput.get())
+        img = BitmapImage(data=qr.xbm(scale=10))
+    else:
+        messagebox.showwarning('warning',"Didnt write anything")
+    try:
+        displayCode()
+    except:
+        pass
+
 def displayCode():
-    pass
+    imglbl.config(image=img)
+    output.config(text="Qr Code : "+userInput.get())
 
 Lbl=Label(tk,text="Enter text or URL",bg="#f25252",padx=30,pady=20,font=("Courier",30))
 Lbl.pack()
