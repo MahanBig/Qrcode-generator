@@ -31,7 +31,7 @@ entry.pack(padx=50,pady=30)
 button= Button(tk,text="Generate",command=generateQr)
 button.pack(padx=10,pady=10)
 
-imglbl = Label(tk)
+imglbl=Label(tk)
 imglbl.pack()
 
 output = Label(tk,text="")
